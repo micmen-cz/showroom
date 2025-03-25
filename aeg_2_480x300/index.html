@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html>
+<head><!--Adform Global Clicktag START-->
+<script type="text/javascript">
+    function adfOpenGlobalClickTAG() {
+        var adfClickTAGName = 'clickTAG',
+            adfClickTAGUrl = 'https://aeg.sk/';
+
+        window.open(dhtml.getVar(adfClickTAGName, adfClickTAGUrl), dhtml.getVar('landingPageTarget', '_blank'));
+    }
+    if(window.document.addEventListener) {
+        window.document.addEventListener('click', function(e) {
+            if(e.button !== 0) return;
+            e.stopPropagation();
+            e.preventDefault();
+            adfOpenGlobalClickTAG();
+        }, true);
+    } else {
+        document.attachEvent('onclick', function() {
+            adfOpenGlobalClickTAG();
+        });
+    }
+</script>
+<style>
+    html {
+        cursor: pointer;
+    }
+</style>
+<!--Adform Global Clicktag END-->
+
+<!-- Adform API Script -->
+<script type="text/javascript">
+    document.write('<script src="'+ (window.API_URL || 'https://s1.adform.net/banners/scripts/rmb/Adform.DHTML.js?bv='+ Math.random()) +'"><\/script>');
+</script>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>AEG</title>
+<meta name="viewport" content="width=device-width">
+<meta name="ad.size" content="width=480,height=300">
+<style>
+body {
+  margin: 0;
+  cursor:pointer;
+}
+a {
+	width: 480px;
+	height: 300px;
+	display: block;
+	position: relative;
+	cursor:pointer;
+}
+
+#banner{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+#banner {
+	background:#000000 none no-repeat;
+	border: 1px dashed #f00;
+}
+
+
+#banner.reset {
+	overflow: hidden;
+	border: 0 none;
+}
+
+
+#banner_id div, #banner_id img {
+	position: absolute;
+	border: 0;
+}
+
+#banner .border {z-index: 9000;background-color: #aaaaaa;display:none;}
+#banner.reset .border {display:block;}
+#banner .b1 {left: 0px; top: 0px; width: 100%; height: 1px;}
+#banner .b2 {right: 0px; top: 0px; width: 1px; height: 100%;}
+#banner .b3 {left: 0px; bottom: 0px; width: 100%; height: 1px;}
+#banner .b4 {left: 0px; top: 0px; width: 1px; height: 100%;}
+
+
+
+/**** objects ****/
+
+
+#tl {
+	top: 0px;
+	left: 0px;
+}
+#t2 {
+	top: 0px;
+	left: 0px;
+}
+#t3 {
+	top: 0px;
+	left: 0px;
+}
+
+#il {
+	top: 0px;
+	left: 0px;
+}
+#i2 {
+	top: 0px;
+	left: 0px;
+}
+#i3 {
+	top: 0px;
+	left: 0px;
+}
+#logo {
+	top: 0px;
+	left: 0px;
+}
+#cta {
+	top: 0px;
+	left: 0px;
+}
+
+
+
+
+.hide {
+	opacity:0;
+}
+
+.show {
+	opacity:1;
+}
+
+
+
+/**** resets ****/
+
+
+.reset #t1
+{
+	 opacity:0;
+	 transform: translate(0px, 20px);
+	 -webkit-transform: translate(0px, 20px);
+	 transition: transform 0ms linear, opacity 0ms; -webkit-transition: transform 0ms linear, opacity 0ms;
+}  
+.reset #t2
+{
+	 opacity:0;
+	 transform: translate(0px, 20px);
+	 -webkit-transform: translate(0px, 20px);
+	 transition: transform 0ms linear, opacity 0ms; -webkit-transition: transform 0ms linear, opacity 0ms;
+}  
+
+.reset #t3
+{
+	 opacity:0;
+	 transform: translate(0px, 20px) scale(1.0);
+	 -webkit-transform: translate(0px, 20px) scale(1.0);
+	 transition: transform 0ms linear, opacity 0ms; 
+	 -webkit-transition: transform 0ms linear, opacity 0ms;
+	 transform-origin: 50% 45%;
+	 -webkit-transform-origin: 50% 45%;
+}  
+
+
+.reset #i1{
+	 opacity:1;
+	 transform: translate(0px, 0px) scale(1.0);
+	 -webkit-transform: translate(0px, 0px) scale(1.0);
+	 transition: transform 0ms ease-out, opacity 0ms; -webkit-transition: transform 0ms ease-out, opacity 0ms;
+}
+
+.reset #i2{
+	 opacity:0;
+	 transform: translate(0px, 0px) scale(1.0);
+	 -webkit-transform: translate(0px, 0px) scale(1.0);
+	 transition: transform 0ms ease-out, opacity 0ms; -webkit-transition: transform 0ms ease-out, opacity 0ms;
+}
+.reset #i3{
+	 opacity:1;
+	 transform: translate(480px, 0px) scale(1.0);
+	 -webkit-transform: translate(480px, 0px) scale(1.0);
+	 transition: transform 0ms ease-out, opacity 0ms; -webkit-transition: transform 0ms ease-out, opacity 0ms;
+}
+
+
+ .reset #logo
+{
+	 opacity:1;
+	 transform: translate(0px, 0px) rotate(0deg);
+	 -webkit-transform: translate(0px, 0px) rotate(0deg);
+	 transition: transform 0ms ease-out, opacity 0ms linear 0ms; -webkit-transition: transform 0ms ease-out, opacity 0ms linear 0ms;
+} 
+
+
+ 
+.reset #cta {
+	opacity:0;
+	transition: transform 0ms ease-out, opacity 0ms;
+	-webkit-transition: transform 0ms ease-out, opacity 0ms;
+}
+
+
+
+
+
+/**** slides ****/
+
+.step1 #t1 {
+	 opacity:1;
+	 transform: translate(0px, 0px);
+	 -webkit-transform: translate(0px, 0px);
+	 transition: transform 1500ms ease-out, opacity 500ms; -webkit-transition: transform 1500ms  ease-out, opacity 500ms;
+}
+
+.step2 #i2 {
+	 opacity:1;
+	 transform: translate(0px, 0px);
+	 -webkit-transform: translate(0px, 0px);
+	 transition: transform 500ms ease-out, opacity 500ms; -webkit-transition: transform 500ms ease-out, opacity 500ms;
+}
+
+.step3 #t2 {
+	 opacity:1;
+	 transform: translate(0px, 0px);
+	 -webkit-transform: translate(0px, 0px);
+	 transition: transform 1500ms ease-out, opacity 500ms; -webkit-transition: transform 1500ms ease-out, opacity 500ms;
+}
+.step4 #i3 {
+	 opacity:1;
+	 transform: translate(0px, 0px);
+	 -webkit-transform: translate(0px, 0px);
+	 transition: transform 500ms ease-out, opacity 500ms; -webkit-transition: transform 500ms ease-out, opacity 500ms;
+}
+
+.step5 #t3 {
+	 opacity:1;
+	 transform: translate(0px, 0px) scale(1.0);
+	 -webkit-transform: translate(0px, 0px) scale(1.0);
+	 transition: transform 1500ms ease-out, opacity 500ms; -webkit-transition: transform 1500ms ease-out, opacity 500ms;
+}
+
+.step6 #cta {
+	 opacity:1;
+	 transform: translate(0px, 0px);
+	 -webkit-transform: translate(0px, 0px);
+	 transition: transform 0ms ease-out, opacity 500ms; -webkit-transition: transform 0ms ease-out, opacity 500ms;
+}
+
+
+/**** final ****/
+
+.final #cta
+{
+	 opacity:1;
+	 transform: translate(0px, 0px)  rotate(0deg) ;
+	 -webkit-transform: translate(0px, 0px) scale(1.0) rotate(0deg);
+	 transition: transform 0ms ease-out, opacity 0ms linear 0ms; 
+	 -webkit-transition: transform 0ms ease-out, opacity 0ms linear 0ms;
+} 
+
+.final #t3{
+	 opacity:1;
+	 transform: translate(0px, 0px) scale(1.0);
+	 -webkit-transform: translate(0px, 0px) scale(1.0);
+	 transition: transform 0ms ease-out, opacity 0ms linear 0ms; 
+	 -webkit-transition: transform 0ms ease-out, opacity 0ms linear 0ms;
+}
+
+.final #i3{
+	 opacity:1;
+	 transform: translate(0px, 0px)  rotate(0deg) ;
+	 -webkit-transform: translate(0px, 0px) scale(1.0) rotate(0deg);
+	 transition: transform 0ms ease-out, opacity 0ms linear 0ms; 
+	 -webkit-transition: transform 0ms ease-out, opacity 0ms linear 0ms;
+}
+
+
+
+#banner.step6:hover #cta, #banner.final:hover #cta {
+	opacity:1;
+	 transform: translate(0px, -3px) scale(1.0) rotate(0deg);
+	 -webkit-transform: translate(0px, -3px) scale(1.0) rotate(0deg);
+	transition: transform 0ms ease-in-out, opacity 0.2s; -webkit-transition: transform 0ms ease-in-out, opacity 0.2s;
+	animation: none;
+	-webkit-animation: none;
+}
+
+
+</style>
+</head>
+<body>
+<div id="banner_id">
+<a id="creativelink" target="_blank"> 
+	<div id="banner"> 
+
+		
+		<img src="obr1.jpg" id="i1" /> 
+		<img src="txt1.png" id="t1" /> 
+		
+		<img src="obr2.jpg" id="i2" /> 
+		<img src="txt2.png" id="t2" /> 
+		
+		<img src="obr3.jpg" id="i3" /> 
+		<img src="txt3.png" id="t3" /> 
+		
+		<img src="logo.png" id="logo" /> 
+		<img src="cta.png" id="cta" /> 
+		
+		<div class="border b1"></div><div class="border b2"></div><div class="border b3"></div><div class="border b4"></div>
+		
+
+  </div>	
+</a>
+
+</div>
+<script>
+
+  var banner = document.getElementById('banner');
+  banner.className = " reset";
+  var lap =1, maxlap=3, to=[], cta, limit=true, slide_timer=0, restart;
+  function animation()
+  {
+		slide('step0',0.1); // i1
+		slide('step1','+0.5'); // t1 in
+		slide('step2','+2.0'); // i2 in
+		slide('step3','+0.5'); // i2 in
+		slide('step4','+2.0'); // i3 in
+		slide('step5','+0.5'); // i3 in
+		slide('step6','+0.5'); // cta in
+
+			
+
+		
+		slide('wait','+3.0'); //
+
+		
+	restart = 1;
+	if(isNaN(restart) || restart==undefined || restart < slide_timer) restart = slide_timer + 1.2;
+	
+	if(lap==maxlap && limit){
+		//stop -  true = only this css class
+		var cto =  slide('reset final',restart, true); 
+	}
+	else{
+		//reset -  true = only this css class
+		slide('reset restart',restart, true); 
+		cta =  setTimeout(animation, (restart +.01) * 1000);
+	}
+	
+	if(limit) lap++;
+  }
+  
+  function slide(step, time, only){
+ 		if(typeof time === 'string'){
+			slide_timer += parseFloat(time);
+		}
+		else{
+			slide_timer= time;
+		}
+	var cto = setTimeout(function() { 
+
+		if(only) banner.className = ""+step
+		else banner.className += " "+step 
+		}, slide_timer*1000); 
+  }
+
+  animation();
+
+  
+
+</script>
+
+</body>
+</html>
