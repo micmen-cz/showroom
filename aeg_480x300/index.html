@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>AEG</title>
+<meta name="viewport" content="width=device-width">
+<meta name="ad.size" content="width=480,height=300">
+<style>
+body {
+  margin: 0;
+  cursor:pointer;
+}
+
+a {
+
+	width:480px;
+	height: 300px;	
+	display: block;
+	position: relative;
+	cursor:pointer;
+}
+
+#banner {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	background-color: #000;
+	border: 0px none #f00;
+}
+#banner.reset {
+	overflow: hidden;
+    border: 0 none;
+}
+
+div, img {
+	position: absolute;
+	border: 0;
+}
+
+
+/***** objects ******/
+
+
+
+
+
+#logo {
+	top: 0px;
+	left: 0px;
+}
+
+#cta{
+	left: 0px;
+	top: 0px;
+}
+
+#o1{
+	left: 0px;
+	top: 0px;
+	width:100%;
+}
+
+#video_wrap {
+	width:200px;
+	height:400px;
+	
+}
+
+#output {
+	opacity:0.3;
+}
+
+
+
+/***** resets ******/
+
+
+
+.reset #cta, .reset #o2, .reset #t1, .reset #t2, .reset #t3 {
+	opacity:0;
+	transform: translate(0px, 0px) scale(1.0) rotate(0deg);
+	-webkit-transform: translate(0px, 0px) scale(1.0) rotate(0deg);
+	transition: transform 0ms ease-out, opacity 0ms;
+	-webkit-transition: -webkit-transform 0ms ease-out, opacity 0ms;
+}
+
+.reset #o1 {
+	opacity:1;
+	transform: translate(0px, 0px) scale(1.0) rotate(0deg);
+	-webkit-transform: translate(0px, 0px) scale(1.0) rotate(0deg);
+	transition: transform 0ms ease-out, opacity 0ms;
+	-webkit-transition: -webkit-transform 0ms ease-out, opacity 0ms;
+    transform-origin: 50% 100%;
+    -webkit-transform-origin: 50% 100%;
+}
+
+.reset #tece {
+	opacity:0;
+	transform: translate(0px, 0px) scaleY(0.0) rotate(0deg);
+	-webkit-transform: translate(0px, 0px) scaleY(0.0) rotate(0deg);
+	transition: transform 0ms ease-out, opacity 0ms;
+	-webkit-transition: -webkit-transform 0ms ease-out, opacity 0ms;
+    transform-origin: 270px 185px;
+    -webkit-transform-origin: 270px 185px;
+}
+
+.reset #dtest {
+	opacity:1;
+	transform: translate(150px, 0px) scale(1.0) rotate(0deg);
+	-webkit-transform: translate(150px, 0px) scale(1.0) rotate(0deg);
+	transition: transform 0ms ease-out, opacity 0ms;
+	-webkit-transition: -webkit-transform 0ms ease-out, opacity 0ms;
+
+}
+
+.reset #video_wrap {
+	opacity:1;
+	transform: translate(140px, 80px) scale(1.0) rotate(0deg);
+	-webkit-transform: translate(140px, 80px) scale(1.0) rotate(0deg);
+	transition: transform 0ms ease-out, opacity 0ms;
+	-webkit-transition: -webkit-transform 0ms ease-out, opacity 0ms;
+    transform-origin: 50% 50%;
+    -webkit-transform-origin: 50% 50%;
+}
+
+
+
+
+/***** slides *****/
+
+.step1 #o1{
+	opacity:1;
+	transform: translate(0px, 0px) scale(1.0) rotate(0deg);
+	-webkit-transform: translate(0px, 0px) scale(1.0) rotate(0deg);
+	transition: transform 1000ms ease-in-out, opacity 0ms;
+	-webkit-transition: -webkit-transform 1000ms ease-in-out, opacity 0ms;
+}
+
+.step1 #video_wrap {
+	opacity:1;
+	transform: translate(140px, 80px) scale(1.0) rotate(0deg);
+	-webkit-transform: translate(140px, 80px) scale(1.0) rotate(0deg);
+	transition: transform 0ms ease-in-out, opacity 0ms;
+	-webkit-transition: -webkit-transform 0ms ease-in-out, opacity 0ms;
+}
+
+.step2 #t1{
+	opacity:1;
+	transform: translate(0px, 0px) scale(1.0) rotate(0deg);
+	-webkit-transform: translate(0px, 0px) scale(1.0) rotate(0deg);
+	transition: transform 0ms ease-out, opacity 600ms ease-out;
+	-webkit-transition: -webkit-transform 0ms ease-out, opacity 600ms  ease-out;
+}
+
+.step3 #video_wrap {
+	opacity:0;
+	transform: translate(230px, 0px) scaleX(1.8) rotate(0deg);
+	-webkit-transform: translate(230px, 0px) scaleX(1.8) rotate(0deg);
+	transition: transform 0ms ease-out, opacity 0ms;
+	-webkit-transition: -webkit-transform 0ms ease-out, opacity 0ms;
+}
+
+.step3 #o2{
+	opacity:1;
+	transform: translate(0px, 0px) scale(1.0) rotate(0deg);
+	-webkit-transform: translate(0px, 0px) scale(1.0) rotate(0deg);
+	transition: transform 0ms ease-out, opacity 500ms;
+	-webkit-transition: -webkit-transform 0ms ease-out, opacity 500ms;
+}
+
+.step3a #video_wrap {
+	opacity:0.8;
+	transform: translate(230px, 0px) scaleX(1.8) rotate(0deg);
+	-webkit-transform: translate(230px, 0px) scaleX(1.8) rotate(0deg);
+	transition: transform 0ms ease-out, opacity 300ms;
+	-webkit-transition: -webkit-transform 0ms ease-out, opacity 300ms;
+}
+
+
+.step3a #tece {
+	opacity:1;
+	transform: translate(0px, 0px) scaleY(1.0) rotate(0deg);
+	-webkit-transform: translate(0px, 0px) scaleY(1.0) rotate(0deg);
+	transition: transform 2000ms ease-out, opacity 0ms;
+	-webkit-transition: -webkit-transform 2000ms ease-out, opacity 0ms;
+}
+
+
+.step4 #t2{
+	opacity:1;
+	transform: translate(0px, 0px) scale(1.0) rotate(0deg);
+	-webkit-transform: translate(0px, 0px) scale(1.0) rotate(0deg);
+	transition: transform 0ms ease-out, opacity 500ms;
+	-webkit-transition: -webkit-transform 0ms ease-out, opacity 500ms;
+}
+
+.step5 #t3{
+	opacity:1;
+	transform: translate(0px, 0px) scale(1.0) rotate(0deg);
+	-webkit-transform: translate(0px, 0px) scale(1.0) rotate(0deg);
+	transition: transform 0ms ease-out, opacity 500ms;
+	-webkit-transition: -webkit-transform 0ms ease-out, opacity 500ms;
+}
+
+.step6 #cta{
+	opacity:1;
+	transform: translate(0px, 0px) scale(1.0) rotate(0deg);
+	-webkit-transform: translate(0px, 0px) scale(1.0) rotate(0deg);
+	transition: transform 0ms ease-out, opacity 300ms;
+	-webkit-transition: -webkit-transform 0ms ease-out, opacity 300ms;
+}
+
+
+/***** FINAL   *****/
+
+.final #o2, .final #t2, .final #t3, .final #cta {
+	opacity:1;
+	transform: translate(0px, 0px) scale(1.0) rotate(0deg);
+	-webkit-transform: translate(0px, 0px) scale(1.0) rotate(0deg);
+	transition: transform 0ms ease-out, opacity 0ms;
+	-webkit-transition: -webkit-transform 0ms ease-out, opacity 0ms;
+}
+
+.final #video_wrap {
+	opacity:0.6;
+	transform: translate(230px, 0px) scaleX(1.8) rotate(0deg);
+	-webkit-transform: translate(230px, 0px) scaleX(1.8) rotate(0deg);
+	transition: transform 0ms ease-out, opacity 100ms;
+	-webkit-transition: -webkit-transform 0ms ease-out, opacity 100ms;
+}
+
+.final #tece {
+	opacity:1;
+	transform: translate(0px, 0px) scaleY(1.0) rotate(0deg);
+	-webkit-transform: translate(0px, 0px) scaleY(1.0) rotate(0deg);
+	transition: transform 0ms ease-out, opacity 0ms;
+	-webkit-transition: -webkit-transform 0ms ease-out, opacity 0ms;
+}
+
+/***** CTA *****/
+
+#banner:hover #cta {
+	-webkit-transform: translate(0px, -5px);
+	transform: translate(0px, -5px);
+	-webkit-transition: -webkit-transform 0s linear, opacity 0s linear;
+	transition: transform 0s linear, opacity 0s linear;
+}
+
+
+</style>
+
+</head>
+<body>
+
+<div id="banner_id">
+	<a id="creativelink"  target="_blank">
+
+	<div id="banner">
+	
+		<img src="obr1.jpg" id="o1">
+			<img src="txt1.png" id="t1">
+		<img src="obr2.jpg" id="o2">
+			<img src="tece.png" id="tece">
+			<img src="txt2.png" id="t2">	
+			<img src="txt3.png" id="t3">	
+		 <div id="video_wrap">
+					<video id="video" style="visibility:hidden;position:absolute;left:0px;" autoplay loop muted crossorigin="Anonymous">
+						<source src="smoke_200x200.mp4" />
+					</video>
+					<canvas width="200" height="400" id="buffer" style="display:none;width:100%"></canvas>
+					<canvas width="200" height="200" id="output"  style="width:100%"></canvas>
+		  </div>
+			
+			
+		  <img src="cta.png" id="cta">
+		  <img src="logo.png" id="logo">
+
+
+	</div>
+	</a>
+</div>
+<script>
+		//(function(){
+		
+		function videostop(){
+				video.pause();
+		}
+		
+		
+			var outputCanvas = document.getElementById('output'),
+				output = outputCanvas.getContext('2d'),
+				bufferCanvas = document.getElementById('buffer'),
+				buffer = bufferCanvas.getContext('2d'),
+				video = document.getElementById('video'),
+				width = outputCanvas.width,
+				height = outputCanvas.height,
+				interval;
+				
+			function processFrame() {
+				buffer.drawImage(video, 0, 0);
+				
+				// this can be done without alphaData, except in Firefox which doesn't like it when image is bigger than the canvas
+				var	image = buffer.getImageData(0, 0, width, height),
+					imageData = image.data,
+					alphaData = buffer.getImageData(0, height, width, height).data;
+				
+				for (var i = 3, len = imageData.length; i < len; i = i + 4) {
+					imageData[i] = alphaData[i-1];
+				}
+				
+				output.putImageData(image, 0, 0, 0, 0, width, height);
+				requestAnimationFrame(processFrame);
+			}
+		
+
+			
+			requestAnimationFrame(processFrame);
+		//})();
+</script>
+<script>
+
+  var banner = document.getElementById('banner');
+  //var link = document.links[0].className = "init";
+  banner.className = " reset";
+  var lap =1, maxlap=3, to=[], cta, limit=true, slide_timer=0, restart;
+  function animation()
+  {
+		slide('step1',0.3); // o1 zoom in
+		slide('step2','+0.5'); // t1
+		slide('step3','+2.5'); // o2
+		slide('step3a','+0.3'); // smoke up
+	    slide('step4','+0.2'); // t2
+		slide('step5','+0.5'); //dtest
+		slide('step6','+0.5'); //dtest
+		slide('wait','+2.5'); //wait
+
+		
+		
+		
+	restart = 1;
+	if(isNaN(restart) || restart==undefined || restart < slide_timer) restart = slide_timer + 1.0;
+	
+	if(lap==maxlap && limit){
+		//stop -  true = only this css class
+		var cto =  slide('reset final',restart, true); 
+		var eto = setTimeout(videostop, (restart +.01) * 1000);
+	}
+	else{
+		//reset -  true = only this css class
+		slide('reset',restart, true); 
+		cta =  setTimeout(animation, (restart +.01) * 1000);
+	}
+	
+	if(limit) lap++;
+  }
+  
+  function slide(step, time, only){
+ 		if(typeof time === 'string'){
+			slide_timer += parseFloat(time);
+		}
+		else{
+			slide_timer= time;
+		}
+	var cto = setTimeout(function() { 
+
+		if(only) banner.className = ""+step
+		else banner.className += " "+step 
+		}, slide_timer*1000); 
+  }
+  
+  
+
+  animation();
+
+  
+
+</script>
+
+</body>
+</html>

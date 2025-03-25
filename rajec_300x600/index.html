@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Rajec</title>
+<meta name="viewport" content="width=device-width">
+<meta name="ad.size" content="width=300,height=600">
+<style>
+body {
+  margin: 0
+}
+a {
+	width: 300px;
+	height: 600px;
+	display: block;
+	position: relative;
+}
+
+#banner {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	background: #ddd url(pozadi.jpg) no-repeat;
+	-webkit-perspective: 1000px;
+	perspective: 2000px;
+	border: 1px dashed #f00;
+}
+
+#banner.reset {
+	overflow: hidden;
+	border: 0 none;
+}
+
+#banner.reset:after {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  content: '';
+  position: absolute;
+  border: 1px solid #000000;
+  z-index:9000;
+}
+
+
+#banner div, #banner img {
+	position: absolute;
+	border: 0;
+}
+
+
+/**** objects ****/
+
+#lahev{
+	bottom: 0px;
+	right: 72px;
+}
+#tp1{
+	top: 148px;
+	left: 83px;
+}
+#tp2{
+	top: 225px;
+	left: 48px;
+}
+#tp3{
+	top: 214px;
+	left: 175px;
+}
+#tp4{
+	top: 267px;
+	left: 122px;
+}
+#l1{
+	top: 94px;
+	left: 183px;
+}
+#l2{
+	top: 227px;
+	left: 58px;
+}
+#l3{
+	top: 327px;
+	left: 151px;
+}
+#l4{
+	top: 179px;
+	left: 243px;
+}
+#straka {
+	top: 191px;
+	left: 197px;
+}
+	#s1{
+	right: 65px;
+	bottom: -33px;
+	}
+	#s2{
+	right: 65px;
+	bottom: -33px;
+	}
+#hl{
+	top: 429px;
+	left: 18px;
+}
+#shl{
+	top: 501px;
+	left: 33px;
+}
+#cta{
+	position: absolute;
+	left: 18px;
+	top: 545px;
+	background-color: #fff;
+	width: 140px;
+	height: 40px;
+	border-radius: 18px;
+	}
+	#arrow {;
+	left: 28px;
+	top: 12px;
+	}
+	#ctatext {
+	left: 54px;
+	top: 9px;
+	}
+	
+	#final {
+	left: 0px;
+	top: 0px;
+	}
+	
+
+/**** resets ****/
+ .reset #tp1, .reset #tp2, .reset #tp3, .reset #tp4,  .reset #s1, .reset #s2, .reset #shl,.reset #hl, .reset #cta
+{
+	opacity:0;
+	-webkit-transition: 0s;transition: 0s;
+	
+}
+
+.reset #lahev {
+	 transform-origin: bottom center;
+	 transform:translate(300px, 0px) scale(.68);
+	 -webkit-transform:translate(300px, 0px) scale(.68);
+	 transition: transform 0s linear; -webkit-transition: transform 0s linear;
+}
+
+.reset #l1, .reset #l2, .reset #l3, .reset #l4 {
+	 transform:translate(0px, -600px) scale(1);
+	 -webkit-transform:translate(0px, -600px) scale(1);
+	 transition: transform 0s linear; -webkit-transition: transform 0s linear;
+}
+
+
+/**** slides ****/
+
+.step1 #s2 {opacity:1;}
+.step2 #s2 {opacity:0;}
+.step2 #s1 {opacity:1;}
+.step3 #s1 {opacity:0;}
+.step3 #s2, .step3 #tp1  {opacity:1;}
+.step4 #s2 {opacity:0;}
+.step4 #s1 {opacity:1;}
+.step5 #s1 {opacity:0;}
+.step5 #s2, .step5 #tp2 {opacity:1;}
+.step6 #s2 {opacity:0;}
+.step6 #s1 {opacity:1;}
+.step7 #s1 {opacity:0;}
+.step7 #s2, .step7 #tp3 {opacity:1;}
+.step8 #s2 {opacity:0;}
+.step8 #s1 {opacity:1;}
+.step9 #s1 {opacity:0;}
+.step9 #s2, .step9 #tp4 {opacity:1;}
+.step10 #s2 {opacity:0;}
+.step10 #s1 {opacity:1;}
+
+.step11 #lahev {
+	 transform:translate(85px, 10px) scale(.68);
+	 -webkit-transform:translate(85px, 10px) scale(.68);
+	 transition: transform .5s; -webkit-transition: transform .5s;
+}
+
+.step12a #l1, .step12b #l2, .step12c #l3, .step12d #l4 {
+	 transform:translate(0px, 0px) scale(1);
+	 -webkit-transform:translate(0px, 0px) scale(1);
+	 transition: transform .5s linear; -webkit-transition: transform .5s linear;
+}
+
+.step13 #lahev {
+	 transform:translate(85px, 10px) scale(.68);
+	 -webkit-transform:translate(85px, 10px) scale(.68);
+	 transition: transform .5s; -webkit-transition: transform .5s;
+}
+
+.step14 #hl, .step14 #shl, .step14 #cta {
+	opacity:1;
+	-webkit-transition: opacity 0.5s;transition: opacity 0.5s;
+}
+
+/***** CTA + arrow animations *****/
+
+@keyframes arrow {
+ from {
+   transform:translateX(-4px);
+  }
+
+ to {
+	transform:translateX(4px);
+  }
+}
+
+@-webkit-keyframes arrow {
+ from {
+    -webkit-transform:translateX(-4px);
+  }
+
+ to {
+	-webkit-transform:translateX(4px);
+  }
+}
+
+.reset #arrow {
+	animation-duration: 0.4s;
+	animation-name: arrow;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	-webkit-animation-duration: 0.4s;
+	-webkit-animation-name: arrow;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-direction: alternate;
+}
+
+.final #arrow {
+	animation-name: none;
+	-webkit-animation-name:none;
+	transform:translateX(0px);
+	-webkit-transform:translateX(0px);
+	transition: 0s;
+	-webkit-transition: 0s;
+}
+
+#banner.reset:hover #cta, #banner.final:hover #cta  {
+	transform: translate(-3px, -3px);
+	-webkit-transition: transform 0s linear;
+	transition: transform 0s linear;
+}
+
+
+.reset #arrow {
+	animation-duration: 0.4s;
+	animation-name: arrow;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	-webkit-animation-duration: 0.4s;
+	-webkit-animation-name: arrow;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-direction: alternate;
+}
+
+.final #arrow {
+	animation-name: none;
+	-webkit-animation-name:none;
+	transform:translateX(0px);
+	-webkit-transform:translateX(0px);
+	transition: 0s;
+	-webkit-transition: 0s;
+}
+
+#banner.step14:hover #cta, #banner.final:hover #cta  {
+	transform: translate(-3px, -3px);
+	-webkit-transition: transform 0s linear;
+	transition: transform 0s;
+}
+
+/**** final frame ****/
+.final #final {
+	opacity:1;
+}
+
+</style>
+</head>
+<body>
+
+<a id="clickthru-button" href="">
+
+<div id="banner">
+
+
+
+		<img src="lahev.png" id="lahev"/>
+
+		<div id="straka">
+			<img src="straka_1.png" id="s1"/>
+			<img src="straka_2.png" id="s2"/>
+		</div>
+		
+		<img src="txt_pojd_1.png" id="tp1"/>
+		<img src="txt_pojd_2.png" id="tp2"/>
+		<img src="txt_pojd_3.png" id="tp3"/>
+		<img src="txt_pojd_4.png" id="tp4"/>
+        
+		<img src="listek_1.png" id="l1"/>
+		<img src="listek_2.png" id="l2"/>
+		<img src="listek_3.png" id="l3"/>
+		<img src="listek_4.png" id="l4"/>
+		
+		<img src="shl.png" id="shl"/>
+		<img src="hl.png" id="hl"/>
+
+		<div id="cta">
+			<img id="arrow" src="cta_arrow.png"/>
+			<img id="ctatext" src="cta_txt.png"/>
+	    </div>	
+
+        	
+
+</div>
+
+</a>
+<script>
+
+  var banner = document.getElementById('banner');
+  //var link = document.links[0].className = "init";
+  banner.className = " reset";
+  var lap =1, maxlap=2, to=[], cta, limit=false, slide_timer=0, restart;
+  function animation()
+  {
+		slide('step1',0); //ptak
+		slide('step2','+0.1'); 
+		slide('step3','+0.1'); //pojd1
+		slide('step4','+0.1'); 
+		slide('step5','+0.1'); //pojd2
+		slide('step6','+0.1'); 
+		slide('step7','+0.1');  //pojd3
+		slide('step8','+0.1'); 
+		slide('step9','+0.1');  //pojd4
+		slide('step10','+0.1');
+		
+		slide('step11','+0.3'); //lahev in
+		
+		slide('step12a','+0.6'); //listky
+		slide('step12b','+0.1'); 
+		slide('step12c','+0.1');
+		slide('step12d','+0.1'); 
+		
+		//slide('step13','+0.6'); //lahev scale down
+		slide('step14','+0.8'); //hl+shl in
+		
+		
+		
+	restart = 0;
+	if(isNaN(restart) || restart==undefined || restart < slide_timer) restart = slide_timer + 4;
+	
+	if(lap==maxlap && limit){
+		//stop -  true = only this css class
+		var cto =  slide('reset final',restart, true); 
+	}
+	else{
+		//reset -  true = only this css class
+		slide('reset',restart, true); 
+		cta =  setTimeout(animation, (restart +.01) * 1000);
+	}
+	
+	if(limit) lap++;
+  }
+  
+  function slide(step, time, only){
+ 		if(typeof time === 'string'){
+			slide_timer += parseFloat(time);
+		}
+		else{
+			slide_timer= time;
+		}
+	var cto = setTimeout(function() { 
+
+		if(only) banner.className = ""+step
+		else banner.className += " "+step 
+		}, slide_timer*1000); 
+	//to.push(cto);
+  }
+  
+  function generalStop(){
+	clearTimeout(cta);
+	for(var t=0;t<to.length;t++){
+		clearTimeout(to[t]);
+	}
+	slide('final', 0, true); // general stop
+  }
+  
+  animation();
+  //setTimeout(generalStop,30000);
+
+  
+
+</script>
+</body>
+</html>
