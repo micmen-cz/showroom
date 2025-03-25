@@ -6,8 +6,6 @@
 <title>Budvar</title>
 <meta name="viewport" content="width=device-width">
 <meta name="ad.size" content="width=300,height=600">
-<script src="scripts/EBLoader.js"></script>
-<script src="scripts/script.js"></script>
 <style>
 body {
   margin: 0
@@ -174,7 +172,7 @@ a {
 </head>
 <body>
 <div id="banner_id">
-<a id="creativelink" href="" target="_blank">
+<a id="creativelink"  target="_blank">
 
 	<div id="banner">
 				
@@ -184,16 +182,7 @@ a {
 
 </a> 
 </div>
- <script type="text/javascript">
-   var parsed = (document.location.href.split('#')[1]||'').split('&');
-   var params = parsed.reduce(function (params, param) {
-       var param = param.split('=');
-       params[param[0]] = decodeURIComponent(param.slice(1).join('='));
-      return params;
-   }, {});
-   // change link href
-   document.getElementById('creativelink').href = params.clickTag;
-  </script>
+
 <script>
 
   var banner = document.getElementById('banner');
